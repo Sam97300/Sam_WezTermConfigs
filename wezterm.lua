@@ -1,14 +1,14 @@
 local wezterm = require 'wezterm'
 
 local c = {
-  bg          = "#121212",
-  fg          = "#c9c9c9",
-  tab_bg      = "#121212",
-  active_fg   = "#e0e0e0",
-  inactive_fg = "#555555",
-  hover_bg    = "#1a1a1a",
-  border      = "#222222",
-  unseen      = "#e07b4a",
+  bg          = "#010101",
+  fg          = "#DFDACE",
+  tab_bg      = "#0A0A0A",
+  active_fg   = "#DFDACE",
+  inactive_fg = "#424242",
+  hover_bg    = "#181818",
+  border      = "#181818",
+  unseen      = "#E39236",
 }
 
 local process_icons = {
@@ -55,8 +55,8 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
 
   local fg = tab.is_active and c.active_fg
-          or (has_unseen    and c.unseen)
-          or c.inactive_fg
+           or (has_unseen    and c.unseen)
+           or c.inactive_fg
   local bg = tab.is_active and c.bg or c.tab_bg
 
   return {
@@ -72,32 +72,56 @@ return {
   default_prog = { "pwsh.exe", "-NoLogo" },
   launch_menu  = {
     { label = "PowerShell",     args = { "pwsh.exe", "-NoLogo" } },
-    { label = "Command Prompt", args = { "cmd.exe"             } },
-    { label = "WSL",            args = { "wsl.exe"             } },
+    { label = "Command Prompt", args = { "cmd.exe"               } },
+    { label = "WSL",            args = { "wsl.exe"               } },
   },
 
-  font      = wezterm.font_with_fallback({ "CartographCF Nerd Font" }),
+  font = wezterm.font({ family = 'MapleMono Nerd Font', weight = 'Thin' }),
   font_size = 13.0,
 
-  color_scheme = "Hacktober",
   colors = {
     foreground    = c.fg,
     background    = c.bg,
-    cursor_bg     = "#c8a96e",
-    cursor_border = "#c8a96e",
-    cursor_fg     = "#141414",
+    cursor_bg     = "#92734B",
+    cursor_border = "#92734B",
+    cursor_fg     = "#0E0E0F",
+
+    ansi = {
+      "#262729",  -- black
+      "#9B1E2B",  -- red
+      "#4F9060",  -- green
+      "#DA872F",  -- yellow
+      "#356075",  -- blue
+      "#93372D",  -- purple
+      "#64797F",  -- cyan
+      "#D3CEC5",  -- white
+    },
+    brights = {
+      "#454646",  -- bright black
+      "#A92733",  -- bright red
+      "#65BE7E",  -- bright green
+      "#E39236",  -- bright yellow
+      "#4284A8",  -- bright blue
+      "#B55037",  -- bright purple
+      "#829FA9",  -- bright cyan
+      "#DFDACE",  -- bright white
+    },
+
+    selection_fg = "#DFDACE",
+    selection_bg = "#6D1F1C",
+
     tab_bar = {
       background         = c.tab_bg,
-      active_tab         = { bg_color = c.bg,       fg_color = c.active_fg             },
-      inactive_tab       = { bg_color = c.tab_bg,   fg_color = c.inactive_fg           },
+      active_tab         = { bg_color = c.bg,       fg_color = c.active_fg              },
+      inactive_tab       = { bg_color = c.tab_bg,   fg_color = c.inactive_fg            },
       inactive_tab_hover = { bg_color = c.hover_bg, fg_color = c.active_fg, italic = false },
-      new_tab            = { bg_color = c.tab_bg,   fg_color = c.inactive_fg           },
-      new_tab_hover      = { bg_color = c.hover_bg, fg_color = c.active_fg             },
+      new_tab            = { bg_color = c.tab_bg,   fg_color = c.inactive_fg            },
+      new_tab_hover      = { bg_color = c.hover_bg, fg_color = c.active_fg              },
     },
   },
 
   window_background_opacity = 0.92,
-  win32_system_backdrop     = "Acrylic",
+  win32_system_backdrop      = "Acrylic",
 
   window_padding = { left = 20, right = 20, top = 16, bottom = 12 },
 
@@ -109,8 +133,8 @@ return {
 
   window_decorations = "INTEGRATED_BUTTONS|RESIZE",
   window_frame = {
-    font                 = wezterm.font("CartographCF Nerd Font", { weight = "Bold" }),
-    font_size            = 11.0,
+    font = wezterm.font("CartographCF Nerd Font", { weight = "Regular" }),
+    font_size = 13.0,
     active_titlebar_bg   = c.tab_bg,
     inactive_titlebar_bg = c.tab_bg,
     active_titlebar_fg   = c.fg,
@@ -128,5 +152,6 @@ return {
   cursor_blink_ease_in  = "EaseIn",
   cursor_blink_ease_out = "EaseOut",
 
-  front_end = "WebGpu",
+  front_end    = "WebGpu",
+  audible_bell = "Disabled",
 }
