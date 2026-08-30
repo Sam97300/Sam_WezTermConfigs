@@ -1,14 +1,15 @@
 local wezterm = require 'wezterm'
 
+-- theme: Cozy Hearth
 local c = {
-  bg          = "#010101",
-  fg          = "#DFDACE",
-  tab_bg      = "#0A0A0A",
-  active_fg   = "#DFDACE",
-  inactive_fg = "#424242",
-  hover_bg    = "#181818",
-  border      = "#181818",
-  unseen      = "#E39236",
+  bg          = "#13100E",
+  fg          = "#BFB49E",
+  tab_bg      = "#1E1A16",
+  active_fg   = "#BFB49E",
+  inactive_fg = "#4A4238",
+  hover_bg    = "#2A2118",
+  border      = "#2A2118",
+  unseen      = "#CC9038",
 }
 
 local process_icons = {
@@ -82,33 +83,33 @@ return {
   colors = {
     foreground    = c.fg,
     background    = c.bg,
-    cursor_bg     = "#92734B",
-    cursor_border = "#92734B",
-    cursor_fg     = "#0E0E0F",
+    cursor_bg     = "#B87A2A",
+    cursor_border = "#B87A2A",
+    cursor_fg     = "#13100E",
 
     ansi = {
-      "#262729",  -- black
-      "#9B1E2B",  -- red
-      "#4F9060",  -- green
-      "#DA872F",  -- yellow
-      "#356075",  -- blue
-      "#93372D",  -- purple
-      "#64797F",  -- cyan
-      "#D3CEC5",  -- white
+      "#1E1A16",  -- black
+      "#7A2E28",  -- red
+      "#6A7A50",  -- green
+      "#B87A2A",  -- yellow
+      "#4A6878",  -- blue
+      "#6A4A38",  -- purple
+      "#527068",  -- cyan
+      "#A89E8C",  -- white
     },
     brights = {
-      "#454646",  -- bright black
-      "#A92733",  -- bright red
-      "#65BE7E",  -- bright green
-      "#E39236",  -- bright yellow
-      "#4284A8",  -- bright blue
-      "#B55037",  -- bright purple
-      "#829FA9",  -- bright cyan
-      "#DFDACE",  -- bright white
+      "#4A4238",  -- bright black
+      "#964038",  -- bright red
+      "#829464",  -- bright green
+      "#CC9038",  -- bright yellow
+      "#5A7E90",  -- bright blue
+      "#805A48",  -- bright purple
+      "#648880",  -- bright cyan
+      "#BFB49E",  -- bright white
     },
 
-    selection_fg = "#DFDACE",
-    selection_bg = "#6D1F1C",
+    selection_fg = "#BFB49E",
+    selection_bg = "#1E1A16",
 
     tab_bar = {
       background         = c.tab_bg,
@@ -133,7 +134,7 @@ return {
 
   window_decorations = "INTEGRATED_BUTTONS|RESIZE",
   window_frame = {
-    font = wezterm.font("CartographCF Nerd Font", { weight = "Regular" }),
+    font = wezterm.font("MapleMono Nerd Font", { weight = "Regular" }),
     font_size = 13.0,
     active_titlebar_bg   = c.tab_bg,
     inactive_titlebar_bg = c.tab_bg,
