@@ -2,9 +2,9 @@ local wezterm = require 'wezterm'
 
 local c = {
   bg          = "#010101",
-  fg          = "#DFDACE",
+  fg          = "#EADFC8",
   tab_bg      = "#0A0A0A",
-  active_fg   = "#DFDACE",
+  active_fg   = "#EADFC8",
   inactive_fg = "#424242",
   hover_bg    = "#181818",
   border      = "#181818",
@@ -76,7 +76,7 @@ return {
     { label = "WSL",            args = { "wsl.exe"               } },
   },
 
-  font = wezterm.font({ family = 'MapleMono Nerd Font', weight = 'Thin' }),
+  font = wezterm.font("CartographCF Nerd Font", { weight = "Regular" }),
   font_size = 13.0,
 
   colors = {
@@ -94,7 +94,7 @@ return {
       "#356075",  -- blue
       "#93372D",  -- purple
       "#64797F",  -- cyan
-      "#D3CEC5",  -- white
+      "#EADFC8",  -- Oat White
     },
     brights = {
       "#454646",  -- bright black
@@ -104,10 +104,10 @@ return {
       "#4284A8",  -- bright blue
       "#B55037",  -- bright purple
       "#829FA9",  -- bright cyan
-      "#DFDACE",  -- bright white
+      "#EADFC8",  -- bright Oat White
     },
 
-    selection_fg = "#DFDACE",
+    selection_fg = "#EADFC8",
     selection_bg = "#6D1F1C",
 
     tab_bar = {
