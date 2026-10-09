@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 
+-- theme: Cozy Hearth
 local c = {
   bg          = "#010101",
   fg          = "#EADFC8",
@@ -82,9 +83,9 @@ return {
   colors = {
     foreground    = c.fg,
     background    = c.bg,
-    cursor_bg     = "#92734B",
-    cursor_border = "#92734B",
-    cursor_fg     = "#0E0E0F",
+    cursor_bg     = "#DA872F",
+    cursor_border = "#DA872F",
+    cursor_fg     = "#010101",
 
     ansi = {
       "#262729",  -- black
@@ -133,7 +134,7 @@ return {
 
   window_decorations = "INTEGRATED_BUTTONS|RESIZE",
   window_frame = {
-    font = wezterm.font("CartographCF Nerd Font", { weight = "Regular" }),
+    font = wezterm.font("CartographCF Nerd Font", { weight = 400 }),
     font_size = 13.0,
     active_titlebar_bg   = c.tab_bg,
     inactive_titlebar_bg = c.tab_bg,
